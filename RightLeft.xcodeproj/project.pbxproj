@@ -72,7 +72,6 @@
 		786BAE4F1B2FFD4400541903 /* GameEndScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameEndScene.sks; sourceTree = "<group>"; };
 		786BAE511B30078E00541903 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = images/blue.png; sourceTree = "<group>"; };
 		786BAE521B30078E00541903 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = images/orange.png; sourceTree = "<group>"; };
-		78BB2A1D1B31A249001FF1C1 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		78BB2A1E1B31A30B001FF1C1 /* RIghtLeftConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIghtLeftConstant.h; sourceTree = "<group>"; };
 		78BB2A201B31D669001FF1C1 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		78BB2A211B31D669001FF1C1 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
@@ -174,7 +173,6 @@
 				78C68AB91B303FB3004B8EA3 /* AdmobViewController.m */,
 				78C68ABA1B303FB3004B8EA3 /* GameCenterClass.h */,
 				78C68ABB1B303FB3004B8EA3 /* GameCenterClass.m */,
-				78BB2A1D1B31A249001FF1C1 /* Constant.h */,
 				78BB2A1E1B31A30B001FF1C1 /* RIghtLeftConstant.h */,
 				782B394C1B2D523700FDB449 /* Main.storyboard */,
 				782B394F1B2D523700FDB449 /* Images.xcassets */,

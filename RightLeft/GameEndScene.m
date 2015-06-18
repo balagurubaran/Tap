@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 iappscrazy. All rights reserved.
 //
 
-#import "RIghtLeftConstant.h"
 #import "GameEndScene.h"
 
 @implementation GameEndScene
