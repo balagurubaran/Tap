@@ -21,5 +21,6 @@
 #define CURRENTPOINT @"currentpoint"
 #define ISEFFECT @"effect"
 #define BESTSCORE @"bestscore"
+#define ADSLOADCOUNTER @"AdsloadCounter"
 
 #endif
