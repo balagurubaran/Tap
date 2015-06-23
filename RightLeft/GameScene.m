@@ -35,6 +35,7 @@ BOOL isEffect;
 
 AVAudioPlayer *clickPlayer;
 AVAudioPlayer *wrongClickPlayer;
+
 NSUserDefaults *defaults;
 
 @implementation GameScene

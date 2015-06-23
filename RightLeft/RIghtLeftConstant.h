@@ -20,5 +20,6 @@
 
 #define CURRENTPOINT @"currentpoint"
 #define ISEFFECT @"effect"
+#define BESTSCORE @"bestscore"
 
 #endif
