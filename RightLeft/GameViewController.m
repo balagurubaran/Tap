@@ -118,9 +118,9 @@ int adsLoadcounter;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:gameEndScene transition:reveal];
-    if(adsLoadcounter == 5){
+    if(adsLoadcounter > 5){
         [adsController LoadInterstitialAds:self];
-        adsController = 0;
+        adsLoadcounter = 0;
     }
     
     [defaults setObject:[NSString stringWithFormat:@"%d",adsLoadcounter] forKey:ADSLOADCOUNTER];
