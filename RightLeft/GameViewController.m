@@ -13,6 +13,8 @@
 #import "AdmobViewController.h"
 #import "GameCenterClass.h"
 #import "SettingScene.h"
+#import "RIghtLeftConstant.h"
+
 
 MenuScene *menuScene;
 GameScene *gameScene;
@@ -20,6 +22,8 @@ AdmobViewController *adsController;
 GameEndScene *gameEndScene;
 SettingScene *settingsScene;
 SKView * skView;
+
+int adsLoadcounter;
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -79,9 +83,10 @@ SKView * skView;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadSettingScene) name:@"loadSettingScene" object:nil];
     
-    
+    defaults = [NSUserDefaults standardUserDefaults];
     adsController = [AdmobViewController singleton];
-
+    
+    adsLoadcounter = [[defaults objectForKey:ADSLOADCOUNTER] intValue];
 }
 
 - (void) loadAds{
@@ -93,9 +98,14 @@ SKView * skView;
 }
 
 - (void) loadGameScene{
+    adsLoadcounter++;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:gameScene transition:reveal];
+
+    if(adsLoadcounter == 5){
+        [adsController reLoadInterstitialAds];
+    }
 }
 
 - (void) loadMenuScene{
@@ -108,6 +118,12 @@ SKView * skView;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:gameEndScene transition:reveal];
+    if(adsLoadcounter > 5){
+        [adsController LoadInterstitialAds:self];
+        adsLoadcounter = 0;
+    }
+    
+    [defaults setObject:[NSString stringWithFormat:@"%d",adsLoadcounter] forKey:ADSLOADCOUNTER];
 }
 
 - (void) loadSettingScene{

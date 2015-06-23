@@ -30,8 +30,13 @@ NSDate *startDate;
 int maxTimerValue;
 int timer;
 
+int currentPoint;
+BOOL isEffect;
+
 AVAudioPlayer *clickPlayer;
 AVAudioPlayer *wrongClickPlayer;
+
+NSUserDefaults *defaults;
 
 @implementation GameScene
 
@@ -71,6 +76,10 @@ AVAudioPlayer *wrongClickPlayer;
     isTapped = YES;
     isGameStarted = NO;
     isGameFailed = NO;
+    
+    
+     defaults = [NSUserDefaults standardUserDefaults];
+    
     currentPoint = 0;
     maxTimerValue = 60;
     //colorChangetimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(setTheRandomLblText) userInfo:nil repeats:YES];
@@ -95,7 +104,7 @@ AVAudioPlayer *wrongClickPlayer;
     //wrongClickPlayer.volume = 70/100;
     [wrongClickPlayer prepareToPlay];
     
-    isEffect = 0;
+    isEffect = [[defaults objectForKey:ISEFFECT] boolValue];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -140,7 +149,7 @@ AVAudioPlayer *wrongClickPlayer;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"loadGameEndScene" object:nil];
     }
     scoreLblNode.text = [NSString stringWithFormat:@"Score : %d",currentPoint];
-    
+    [defaults setObject:[NSNumber numberWithInt:currentPoint] forKey:@"currentpoint"];
     
     int random = arc4random()%[randomTextArray count];
     

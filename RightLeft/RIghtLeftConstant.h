@@ -18,7 +18,9 @@
 #define BLUE        2
 #define ORANGE      3
 
-int currentPoint;
-//int bestScore;
-int isEffect;
+#define CURRENTPOINT @"currentpoint"
+#define ISEFFECT @"effect"
+#define BESTSCORE @"bestscore"
+#define ADSLOADCOUNTER @"AdsloadCounter"
+
 #endif

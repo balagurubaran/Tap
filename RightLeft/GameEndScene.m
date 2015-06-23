@@ -8,7 +8,10 @@
 
 #import "GameEndScene.h"
 
+#import "RIghtLeftConstant.h"
 @implementation GameEndScene
+
+NSUserDefaults *defaults_GES;
 
 -(void)didMoveToView:(SKView *)view {
     SKLabelNode *playNode = (SKLabelNode*)[self childNodeWithName:@"playNode"];
@@ -21,16 +24,21 @@
     
     SKSpriteNode *settingsNode = (SKSpriteNode*)[self childNodeWithName:@"settingsNode"];
     settingsNode.userData = [NSMutableDictionary dictionaryWithObject:@"settingsNode" forKey:@"userData"];
-    //currentScoreNode.text = [NSString stringWithFormat:@"%d",currentScore];
     
+    defaults_GES = [NSUserDefaults standardUserDefaults];
+    int currentPoint = [[defaults_GES objectForKey:CURRENTPOINT] integerValue];
+    currentScoreNode.text = [NSString stringWithFormat:@"%d",currentPoint];
     
-    /*if(currentScore <= bestScore){
-        bestScore = currentScore;
+    int bestScore = [[defaults_GES objectForKey:BESTSCORE] integerValue];
+    
+    if(currentPoint >= bestScore){
+        bestScore = currentPoint;
+        [defaults_GES setObject:[NSString stringWithFormat:@"%d",bestScore] forKey:BESTSCORE];
     }
     
     SKLabelNode *bestScoreNode = (SKLabelNode*)[self childNodeWithName:@"bestScoreNode"];
     bestScoreNode.text = [NSString stringWithFormat:@"%d",bestScore];
-     */
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
