@@ -40,6 +40,7 @@
     // Will only be run once, the first time this is called
     dispatch_once(&pred, ^{
         shared = [[AdmobViewController alloc] init];
+        
     });
     return shared;
 }
@@ -85,6 +86,21 @@
         isLoaded_ = NO;
     }
 }
+
+- (void) reLoadInterstitialAds{
+    interstitial = [[GADInterstitial alloc] init];
+    interstitial.adUnitID = ADSID;
+    GADRequest *request = [GADRequest request];
+    [interstitial loadRequest:request];
+}
+
+- (void) LoadInterstitialAds:(UIViewController *)rootViewController{
+    
+    if (interstitial.isReady) {
+        [interstitial presentFromRootViewController:rootViewController];
+    }
+}
+
 
 - (void) removeADS{
     [bannerView_ removeFromSuperview ];

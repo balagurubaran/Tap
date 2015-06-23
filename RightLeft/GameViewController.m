@@ -14,6 +14,8 @@
 #import "GameCenterClass.h"
 #import "SettingScene.h"
 
+
+
 MenuScene *menuScene;
 GameScene *gameScene;
 AdmobViewController *adsController;
@@ -96,6 +98,7 @@ SKView * skView;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:gameScene transition:reveal];
+    [adsController reLoadInterstitialAds];
 }
 
 - (void) loadMenuScene{
@@ -108,6 +111,8 @@ SKView * skView;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:gameEndScene transition:reveal];
+    
+    [adsController LoadInterstitialAds:self];
 }
 
 - (void) loadSettingScene{
