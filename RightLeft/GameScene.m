@@ -50,7 +50,7 @@ NSUserDefaults *defaults;
                                    CGRectGetMidY(self.frame));
     
     colorArray = [[NSMutableArray alloc] initWithObjects:REDHEX,GREENHEX,BLUEHEX,ORANGEHEX,nil];
-    randomTextArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"9",@"0",@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z", nil];
+    randomTextArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"9",@"0",@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"!",@"@",@"£",@"$",@"^",@"&",@"*",@"?",@"~", nil];
     
     colorChangeNode = (SKLabelNode*)[self childNodeWithName:@"colorChangeNode"];
     colorChangeNode.userData = [NSMutableDictionary dictionaryWithObject:@"colorChangeNode" forKey:@"userData"];
@@ -82,6 +82,8 @@ NSUserDefaults *defaults;
     
     currentPoint = 0;
     maxTimerValue = 60;
+    
+    [defaults setObject:[NSString stringWithFormat:@"%d",currentPoint] forKey:CURRENTPOINT];
     //colorChangetimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(setTheRandomLblText) userInfo:nil repeats:YES];
     
     colorRandomNumberArray = [GenerateUniqueRandomNumber generateRamdomNumber:0 toValue:[colorArray count]-1 numberOfValue:[colorArray count]];

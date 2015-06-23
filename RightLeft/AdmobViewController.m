@@ -88,6 +88,7 @@
 }
 
 - (void) reLoadInterstitialAds{
+    return;
     interstitial = [[GADInterstitial alloc] init];
     interstitial.adUnitID = ADSID;
     GADRequest *request = [GADRequest request];
