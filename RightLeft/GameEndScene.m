@@ -32,7 +32,7 @@ NSUserDefaults *defaults_GES;
     
     int bestScore = [[defaults_GES objectForKey:BESTSCORE] integerValue];
     
-    if(currentPoint <= bestScore){
+    if(currentPoint >= bestScore){
         bestScore = currentPoint;
         [defaults_GES setObject:[NSString stringWithFormat:@"%d",bestScore] forKey:BESTSCORE];
     }

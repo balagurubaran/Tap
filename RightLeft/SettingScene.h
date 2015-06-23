@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SettingScene : SKScene
-
+@interface SettingScene : SKScene{
+    NSUserDefaults *defaults;
+}
 @end

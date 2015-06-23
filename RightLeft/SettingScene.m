@@ -7,9 +7,13 @@
 //
 
 #import "SettingScene.h"
+#import  "RIghtLeftConstant.h"
+
 
 SKLabelNode *effectNode;
 @implementation SettingScene
+
+
 
 -(void)didMoveToView:(SKView *)view {
     SKSpriteNode *backNode = (SKSpriteNode*)[self childNodeWithName:@"backNode"];
@@ -21,6 +25,8 @@ SKLabelNode *effectNode;
     effectShapeNode.userData = [NSMutableDictionary dictionaryWithObject:@"effectShapeNode" forKey:@"userData"];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
+    
+    defaults = [NSUserDefaults standardUserDefaults];
 }
 
 
@@ -33,15 +39,21 @@ SKLabelNode *effectNode;
         SKShapeNode *node = (SKShapeNode*)[self nodeAtPoint:location];
         NSDictionary *userDataDic = node.userData;
         
+        Boolean isEffect;
+        
         NSString *userData = [userDataDic objectForKey:@"userData"];
         if([userData isEqualToString:@"backNode"]){
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loadMenuScene" object:nil];
         }else if([userData isEqualToString:@"effectShapeNode"]){
             if([effectNode.text isEqualToString:@"ON"]){
                 effectNode.text = @"OFF";
+                isEffect = false;
             }else{
                 effectNode.text = @"ON";
+                isEffect = true;
             }
+            
+            [defaults setObject:[NSString stringWithFormat:@"%d",isEffect] forKey:ISEFFECT];
         }
     }
 }
