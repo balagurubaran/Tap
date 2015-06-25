@@ -15,7 +15,7 @@
 #import "SettingScene.h"
 #import "RIghtLeftConstant.h"
 
-
+#import "GameCenterClass.h"
 MenuScene *menuScene;
 GameScene *gameScene;
 AdmobViewController *adsController;
@@ -24,6 +24,9 @@ SettingScene *settingsScene;
 SKView * skView;
 
 int adsLoadcounter;
+
+@import GameKit;
+
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -82,6 +85,10 @@ int adsLoadcounter;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadGameEndScene) name:@"loadGameEndScene" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadSettingScene) name:@"loadSettingScene" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadLeaderBoard)
+                                                 name:@"loadLeaderBoard"
+                                               object:nil];
     
     defaults = [NSUserDefaults standardUserDefaults];
     adsController = [AdmobViewController singleton];
@@ -130,6 +137,28 @@ int adsLoadcounter;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:settingsScene transition:reveal];
+}
+
+- (void)loadLeaderBoard{
+    
+    [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error) {
+        if(error == nil){
+            GKGameCenterViewController *gameCenterController = [[GKGameCenterViewController alloc] init];
+            if (gameCenterController != nil)
+            {
+                gameCenterController.gameCenterDelegate = self;
+                gameCenterController.viewState = GKGameCenterViewControllerStateLeaderboards;
+                gameCenterController.leaderboardIdentifier = @"bestscore_circlematch";
+                [self presentViewController: gameCenterController animated: YES completion:nil];
+            }
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Game Center Disabled"message:@"For Game Center make sure you have an account and you have a proper device connection."delegate:self cancelButtonTitle:@"Ok"otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+}
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController{
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)shouldAutorotate

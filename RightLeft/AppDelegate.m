@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GameCenterClass.h"
 
 @interface AppDelegate ()
 
@@ -36,6 +37,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    GameCenterClass *GCenter = [GameCenterClass gameCenterSharedInstance];
+    GCenter.leaderBoardID = @"tapcolor_topscore";
+    
+    [GCenter checkAuthentication:^(BOOL gameCenterAvialble) {
+    }];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

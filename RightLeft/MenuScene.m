@@ -16,6 +16,9 @@
     SKSpriteNode *settingsNode = (SKSpriteNode*)[self childNodeWithName:@"settingsNode"];
     settingsNode.userData = [NSMutableDictionary dictionaryWithObject:@"settingsNode" forKey:@"userData"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
+    
+    SKSpriteNode *leaderboardNode = (SKSpriteNode*)[self childNodeWithName:@"leaderboard"];
+    leaderboardNode.userData = [NSMutableDictionary dictionaryWithObject:@"leaderboard" forKey:@"userData"];
 }
 
 
@@ -33,6 +36,8 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loadGameScene" object:nil];
         }else if([userData isEqualToString:@"settingsNode"]){
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loadSettingScene" object:nil];
+        }else if([userData isEqualToString:@"leaderboard"]){
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loadLeaderBoard" object:nil];
         }
     }
 }

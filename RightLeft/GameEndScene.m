@@ -7,7 +7,7 @@
 //
 
 #import "GameEndScene.h"
-
+#import "GameCenterClass.h"
 #import "RIghtLeftConstant.h"
 @implementation GameEndScene
 
@@ -22,8 +22,10 @@ NSUserDefaults *defaults_GES;
     
     SKLabelNode *currentScoreNode = (SKLabelNode*)[self childNodeWithName:@"currentScoreNode"];
     
-    SKSpriteNode *settingsNode = (SKSpriteNode*)[self childNodeWithName:@"settingsNode"];
-    settingsNode.userData = [NSMutableDictionary dictionaryWithObject:@"settingsNode" forKey:@"userData"];
+    SKSpriteNode *leaderboardNode = (SKSpriteNode*)[self childNodeWithName:@"leaderboard"];
+    leaderboardNode.userData = [NSMutableDictionary dictionaryWithObject:@"leaderboard" forKey:@"userData"];
+    
+    
     
     defaults_GES = [NSUserDefaults standardUserDefaults];
     int currentPoint = [[defaults_GES objectForKey:CURRENTPOINT] integerValue];
@@ -31,15 +33,19 @@ NSUserDefaults *defaults_GES;
     
     int bestScore = [[defaults_GES objectForKey:BESTSCORE] integerValue];
     
+    GameCenterClass* GCenter = [GameCenterClass gameCenterSharedInstance];
     if(currentPoint >= bestScore){
         bestScore = currentPoint;
         [defaults_GES setObject:[NSString stringWithFormat:@"%d",bestScore] forKey:BESTSCORE];
+        [GCenter postScore:bestScore];
     }
     
     SKLabelNode *bestScoreNode = (SKLabelNode*)[self childNodeWithName:@"bestScoreNode"];
     bestScoreNode.text = [NSString stringWithFormat:@"%d",bestScore];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
+    
+    
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
@@ -56,6 +62,8 @@ NSUserDefaults *defaults_GES;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loadMenuScene" object:nil];
         }else if([userData isEqualToString:@"settingsNode"]){
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loadSettingScene" object:nil];
+        }else if([userData isEqualToString:@"leaderboard"]){
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loadLeaderBoard" object:nil];
         }
     }
 }

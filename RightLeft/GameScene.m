@@ -12,6 +12,7 @@
 #import "utiliz.h"
 #import <Foundation/Foundation.h>
 
+
 @import AVFoundation;
 SKLabelNode *colorChangeNode;
 SKLabelNode *scoreLblNode;
@@ -107,6 +108,8 @@ NSUserDefaults *defaults;
     [wrongClickPlayer prepareToPlay];
     
     isEffect = [[defaults objectForKey:ISEFFECT] boolValue];
+    
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

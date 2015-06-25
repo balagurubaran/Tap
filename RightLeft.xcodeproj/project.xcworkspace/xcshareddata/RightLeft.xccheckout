@@ -7,22 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E78AA32B-B303-40B9-9B91-FF5CE98C174A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RightLeft</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4F6194CA79CC58A68A913AE7D3583F6C13CC7CFC</key>
 		<string>https://github.com/balagurubaran/Tap.git</string>
-		<key>C523FB79968F006F3B4CCFC8D7248CE25C9FA205</key>
-		<string>https://github.com/balagurubaran/CircleMatch.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RightLeft.xcodeproj</string>
+	<string>RightLeft.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4F6194CA79CC58A68A913AE7D3583F6C13CC7CFC</key>
 		<string>../..</string>
-		<key>C523FB79968F006F3B4CCFC8D7248CE25C9FA205</key>
-		<string>../../../CircleMatch</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/balagurubaran/Tap.git</string>
@@ -32,14 +28,6 @@
 	<string>4F6194CA79CC58A68A913AE7D3583F6C13CC7CFC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C523FB79968F006F3B4CCFC8D7248CE25C9FA205</string>
-			<key>IDESourceControlWCCName</key>
-			<string>CircleMatch</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
