@@ -28,16 +28,22 @@ NSUserDefaults *defaults_GES;
     
     
     defaults_GES = [NSUserDefaults standardUserDefaults];
-    int currentPoint = [[defaults_GES objectForKey:CURRENTPOINT] integerValue];
+    int currentPoint = [[defaults_GES objectForKey:CURRENTPOINT] intValue];
     currentScoreNode.text = [NSString stringWithFormat:@"%d",currentPoint];
     
-    int bestScore = [[defaults_GES objectForKey:BESTSCORE] integerValue];
+    int bestScore = [[defaults_GES objectForKey:BESTSCORE] intValue];
     
     GameCenterClass* GCenter = [GameCenterClass gameCenterSharedInstance];
+
     if(currentPoint >= bestScore){
         bestScore = currentPoint;
         [defaults_GES setObject:[NSString stringWithFormat:@"%d",bestScore] forKey:BESTSCORE];
         [GCenter postScore:bestScore];
+    }else{
+        int gameCenterScore = [[defaults_GES objectForKey:GAMECENTERSCORE] intValue];
+        if(gameCenterScore < bestScore){
+            [GCenter postScore:bestScore];
+        }
     }
     
     SKLabelNode *bestScoreNode = (SKLabelNode*)[self childNodeWithName:@"bestScoreNode"];

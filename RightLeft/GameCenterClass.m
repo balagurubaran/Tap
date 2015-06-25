@@ -7,7 +7,7 @@
 //
 
 #import "GameCenterClass.h"
-
+#import "RIghtLeftConstant.h"
 
 @import GameKit;
 
@@ -39,11 +39,23 @@ GameCenterClass *gameCenterSharedInstance;
         }
     }];*/
     
+    defaults = [NSUserDefaults standardUserDefaults];
+    
     [GKLocalPlayer localPlayer].authenticateHandler = ^(UIViewController *viewController, NSError *error)
     {
         if (error == nil) {
             isAuthetication = YES;
             gameCenterIsavaialble(isAuthetication);
+            
+            GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] init];
+            leaderboardRequest.identifier = @"tapcolor_topscore";
+            if (leaderboardRequest != nil) {
+                [leaderboardRequest loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error){
+                    if (error == nil) {
+                        [defaults setObject:[NSString stringWithFormat:@"%lld",leaderboardRequest.localPlayerScore.value] forKey:GAMECENTERSCORE];
+                    }
+                }];
+            }
         }
         else{
             isAuthetication = NO;
@@ -65,6 +77,9 @@ GameCenterClass *gameCenterSharedInstance;
         NSArray *scores = @[scoreReporter];
         [GKScore reportScores:scores withCompletionHandler:^(NSError *error) {
             //Do something interesting here.
+            if(error == nil){
+                [defaults setObject:[NSString stringWithFormat:@"%d",score] forKey:GAMECENTERSCORE];
+            }
         }];
     }
 }

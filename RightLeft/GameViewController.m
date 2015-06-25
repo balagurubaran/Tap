@@ -148,7 +148,7 @@ int adsLoadcounter;
             {
                 gameCenterController.gameCenterDelegate = self;
                 gameCenterController.viewState = GKGameCenterViewControllerStateLeaderboards;
-                gameCenterController.leaderboardIdentifier = @"bestscore_circlematch";
+                gameCenterController.leaderboardIdentifier = @"tapcolor_topscore";
                 [self presentViewController: gameCenterController animated: YES completion:nil];
             }
         }else{

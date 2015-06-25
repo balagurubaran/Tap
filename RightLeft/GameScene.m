@@ -87,7 +87,7 @@ NSUserDefaults *defaults;
     [defaults setObject:[NSString stringWithFormat:@"%d",currentPoint] forKey:CURRENTPOINT];
     //colorChangetimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(setTheRandomLblText) userInfo:nil repeats:YES];
     
-    colorRandomNumberArray = [GenerateUniqueRandomNumber generateRamdomNumber:0 toValue:[colorArray count]-1 numberOfValue:[colorArray count]];
+    colorRandomNumberArray = [GenerateUniqueRandomNumber generateRamdomNumber:0 toValue:(int)[colorArray count]-1 numberOfValue:(int)[colorArray count]];
 
     currentColor = [[colorRandomNumberArray objectAtIndex:0] intValue];
     colorChangeNode.fontColor = [utiliz colorFromHexString:[colorArray objectAtIndex:currentColor]];
@@ -164,7 +164,7 @@ NSUserDefaults *defaults;
     colorChangeNode.fontColor = [utiliz colorFromHexString:[colorArray objectAtIndex:currentColor]];
     [colorRandomNumberArray removeObjectAtIndex:0];
     if([colorRandomNumberArray count] == 0){
-        colorRandomNumberArray = [GenerateUniqueRandomNumber generateRamdomNumber:0 toValue:[colorArray count]-1 numberOfValue:[colorArray count]];
+        colorRandomNumberArray = [GenerateUniqueRandomNumber generateRamdomNumber:0 toValue:(int)[colorArray count] - 1 numberOfValue:(int)[colorArray count]];
         if(currentColor == [[colorRandomNumberArray objectAtIndex:0] intValue]){
             [colorRandomNumberArray removeObjectAtIndex:0];
             [colorRandomNumberArray addObject:[NSString stringWithFormat:@"%d",currentColor]];
@@ -192,7 +192,7 @@ NSUserDefaults *defaults;
     
     if(isGameStarted){
         scoreLblNode.text = [NSString stringWithFormat:@"Score : %d",currentPoint];
-        NSDate *endTime = [NSDate date];
+        //NSDate *endTime = [NSDate date];
         //timerLblNode.text = [NSString stringWithFormat:@"Time : %.1f",[endTime timeIntervalSinceDate:startDate]];
     }
 }

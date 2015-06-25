@@ -22,5 +22,6 @@
 #define ISEFFECT @"effect"
 #define BESTSCORE @"bestscore"
 #define ADSLOADCOUNTER @"AdsloadCounter"
+#define GAMECENTERSCORE @"Gamecenterscore"
 
 #endif
