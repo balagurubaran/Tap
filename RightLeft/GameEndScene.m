@@ -52,7 +52,7 @@ NSUserDefaults *defaults_GES;
     SKLabelNode *bestScoreNode = (SKLabelNode*)[self childNodeWithName:@"bestScoreNode"];
     bestScoreNode.text = [NSString stringWithFormat:@"%d",bestScore];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
+  //  [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
     
     
 }

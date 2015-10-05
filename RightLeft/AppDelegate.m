@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GameCenterClass.h"
+#import <Tapjoy/Tapjoy.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //Turn on Tapjoy debug mode
+    
+   // [Tapjoy setDebugEnabled:YES]; //Do not set this for any version of the game released to an app store!
+    //The Tapjoy connect call
+//    [Tapjoy connect:@"rmyM5xlZQ0adf1S58bOZXQEBMmlOcGVQDvtsGhj1DCdrWPgX28nYg67u86hJ"];
+    [Tapjoy requestTapjoyConnect:@"bf4aeef3-6aaf-4226-88d5-93861bfae2dc" secretKey:@"wxZM6bxBKrFG30KAeAh1" options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) } ];
+
+
     return YES;
 }
 

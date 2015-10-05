@@ -7,7 +7,7 @@
 //
 
 #import "AdmobViewController.h"
-#define ADSID @"a15342a12ca609b"
+#define ADSID @"ca-app-pub-4013951321415401/9582428379"
 #define ISTESTADS 0
 
 //BOOL const isSimulator = NO;
@@ -60,7 +60,6 @@
 }
 
 -(void)resetAdView:(UIViewController *)rootViewController {
-    return;
     // Always keep track of currentDelegate for notification forwarding
     currentDelegate_ = rootViewController;
     
@@ -88,7 +87,6 @@
 }
 
 - (void) reLoadInterstitialAds{
-    return;
     interstitial = [[GADInterstitial alloc] init];
     interstitial.adUnitID = ADSID;
     GADRequest *request = [GADRequest request];

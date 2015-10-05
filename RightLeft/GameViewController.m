@@ -15,7 +15,6 @@
 #import "SettingScene.h"
 #import "RIghtLeftConstant.h"
 
-#import "GameCenterClass.h"
 MenuScene *menuScene;
 GameScene *gameScene;
 AdmobViewController *adsController;
@@ -110,7 +109,7 @@ int adsLoadcounter;
     
     [skView presentScene:gameScene transition:reveal];
 
-    if(adsLoadcounter == 5){
+    if(adsLoadcounter == 8){
         [adsController reLoadInterstitialAds];
     }
 }
@@ -125,7 +124,7 @@ int adsLoadcounter;
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:.5];
     
     [skView presentScene:gameEndScene transition:reveal];
-    if(adsLoadcounter > 5){
+    if(adsLoadcounter > 8){
         [adsController LoadInterstitialAds:self];
         adsLoadcounter = 0;
     }
