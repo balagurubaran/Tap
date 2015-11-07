@@ -2,7 +2,7 @@
 # platform :ios, '7.0'
 
 target 'RightLeft' do
-pod 'TapjoySDK' => '10.2.2'
+pod 'TapjoySDK'
 
 end
 

@@ -14,7 +14,7 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>See http://tech.tapjoy.com/product-overview/tapjoy-sdk-download-license-agreement</string>
+			<string>BY DOWNLOADING THE TAPJOY SDK FRAMEWORK, YOU ARE AGREEING TO THE TERMS AND CONDITIONS OF THE TAPJOY SDK LICENSE AGREEMENT LOCATED AT http://home.tapjoy.com/info/legal/#SDK-license.  IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THE TAPJOY SDK LICENSE AGREEMENT, YOU ARE NOT AUTHORIZED TO AND YOU MAY NOT DOWNLOAD THE TAPJOY SDK FRAMEWORK.</string>
 			<key>Title</key>
 			<string>TapjoySDK</string>
 			<key>Type</key>

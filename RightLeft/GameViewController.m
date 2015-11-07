@@ -60,7 +60,7 @@ int adsLoadcounter;
     
     // Create and configure the scene.
     menuScene = [MenuScene unarchiveFromFile:@"MenuScene"];
-    menuScene.scaleMode = SKSceneScaleModeFill;
+    menuScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Create and configure the scene.
     gameScene = [GameScene unarchiveFromFile:@"GameScene"];

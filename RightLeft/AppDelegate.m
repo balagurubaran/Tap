@@ -23,8 +23,9 @@
     
    // [Tapjoy setDebugEnabled:YES]; //Do not set this for any version of the game released to an app store!
     //The Tapjoy connect call
-//    [Tapjoy connect:@"rmyM5xlZQ0adf1S58bOZXQEBMmlOcGVQDvtsGhj1DCdrWPgX28nYg67u86hJ"];
-    [Tapjoy requestTapjoyConnect:@"bf4aeef3-6aaf-4226-88d5-93861bfae2dc" secretKey:@"wxZM6bxBKrFG30KAeAh1" options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) } ];
+    
+    [Tapjoy connect:@"NnuneW8TTWKHCy9g5pKYVQEBsViuOxX70GS7gzE6yDuBxgh1B2op5jLybO9j"];
+    //[Tapjoy requestTapjoyConnect:@"bf4aeef3-6aaf-4226-88d5-93861bfae2dc" secretKey:@"wxZM6bxBKrFG30KAeAh1" options:@{ TJC_OPTION_ENABLE_LOGGING : @(YES) } ];
 
 
     return YES;

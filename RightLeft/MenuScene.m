@@ -7,18 +7,23 @@
 //
 
 #import "MenuScene.h"
+SKSpriteNode *playNode;
+SKSpriteNode *settingsNode;
+SKSpriteNode *leaderboardNode;
 
 @implementation MenuScene
 -(void)didMoveToView:(SKView *)view {
-    SKSpriteNode *playNode = (SKSpriteNode*)[self childNodeWithName:@"playNode"];
-    playNode.userData = [NSMutableDictionary dictionaryWithObject:@"playNode" forKey:@"userData"];
-    
-    SKSpriteNode *settingsNode = (SKSpriteNode*)[self childNodeWithName:@"settingsNode"];
-    settingsNode.userData = [NSMutableDictionary dictionaryWithObject:@"settingsNode" forKey:@"userData"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
-    
-    SKSpriteNode *leaderboardNode = (SKSpriteNode*)[self childNodeWithName:@"leaderboard"];
-    leaderboardNode.userData = [NSMutableDictionary dictionaryWithObject:@"leaderboard" forKey:@"userData"];
+    if(playNode == NULL){
+        playNode = (SKSpriteNode*)[self childNodeWithName:@"playNode"];
+        playNode.userData = [NSMutableDictionary dictionaryWithObject:@"playNode" forKey:@"userData"];
+        
+        settingsNode = (SKSpriteNode*)[self childNodeWithName:@"settingsNode"];
+        settingsNode.userData = [NSMutableDictionary dictionaryWithObject:@"settingsNode" forKey:@"userData"];
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
+        
+        leaderboardNode = (SKSpriteNode*)[self childNodeWithName:@"leaderboard"];
+        leaderboardNode.userData = [NSMutableDictionary dictionaryWithObject:@"leaderboard" forKey:@"userData"];
+    }
 }
 
 
@@ -28,7 +33,7 @@
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
-        SKShapeNode *node = (SKShapeNode*)[self nodeAtPoint:location];
+        SKSpriteNode *node = (SKSpriteNode*)[self nodeAtPoint:location];
         NSDictionary *userDataDic = node.userData;
         
         NSString *userData = [userDataDic objectForKey:@"userData"];

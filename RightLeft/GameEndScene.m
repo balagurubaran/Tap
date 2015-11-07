@@ -28,6 +28,8 @@ NSUserDefaults *defaults_GES;
     SKSpriteNode *settingsNode = (SKSpriteNode*)[self childNodeWithName:@"settingsNode"];
     settingsNode.userData = [NSMutableDictionary dictionaryWithObject:@"settingsNode" forKey:@"userData"];
     
+    SKSpriteNode *leaderBoardNode = (SKSpriteNode*)[self childNodeWithName:@"leaderBoardNode"];
+    leaderBoardNode.userData = [NSMutableDictionary dictionaryWithObject:@"leaderboard" forKey:@"userData"];
     
     
     defaults_GES = [NSUserDefaults standardUserDefaults];

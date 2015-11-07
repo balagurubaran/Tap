@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4FBCEC856A4BEA26DC1FD132604B53F7 /* Pods-RightLeft-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 621740A6FD5D08C429D8E918E9867450 /* Pods-RightLeft-dummy.m */; };
-		E5B2E2B44102DD1EDF9830FD851391B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5BCCEFD069E4DC5F1EBDB38063CD11 /* Foundation.framework */; };
+		4FBCEC856A4BEA26DC1FD132604B53F7 /* Pods-RightLeft-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9422EFC8FDE664E99E3840265E35AC7D /* Pods-RightLeft-dummy.m */; };
+		E5AF237E46367BD7D7C0862F969AA041 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0962E13320D625CC2E9DE9B47427FF6F /* TapjoyResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TapjoyResources.bundle; path = TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle; sourceTree = "<group>"; };
-		0E5BCCEFD069E4DC5F1EBDB38063CD11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		194D90C9555FBFFF65902858A6211016 /* Pods-RightLeft-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RightLeft-resources.sh"; sourceTree = "<group>"; };
-		3AD954795768025FCDF94E63032A91BF /* Pods-RightLeft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RightLeft.debug.xcconfig"; sourceTree = "<group>"; };
-		621740A6FD5D08C429D8E918E9867450 /* Pods-RightLeft-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RightLeft-dummy.m"; sourceTree = "<group>"; };
-		75CC12463D994997CC4B4D9228766555 /* TapjoyResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TapjoyResources.bundle; path = TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle; sourceTree = "<group>"; };
-		90C3B91D66D2EA32BC2B16FED13FE8B3 /* Pods-RightLeft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RightLeft.release.xcconfig"; sourceTree = "<group>"; };
+		3BD6D56A07078F38404C0066A0008079 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tapjoy.framework; path = TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		59EFA8E340336A3F0426B188A7910768 /* TapjoyResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TapjoyResources.bundle; path = TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle; sourceTree = "<group>"; };
+		5B4FBF0E358AF8F16D12CAE81BE3D71E /* Pods-RightLeft-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RightLeft-acknowledgements.plist"; sourceTree = "<group>"; };
+		64C321A40CCB01B2AA8059DF73E4AB27 /* Pods-RightLeft-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RightLeft-resources.sh"; sourceTree = "<group>"; };
+		776A4273808B90728E232CB098B58EDA /* Pods-RightLeft-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RightLeft-frameworks.sh"; sourceTree = "<group>"; };
+		7F339162BBEE50F1212A94FE6D7E1CA4 /* Pods-RightLeft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RightLeft.release.xcconfig"; sourceTree = "<group>"; };
+		8E47A002FEF9A1E488FB8B0C1B52E836 /* Pods-RightLeft-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RightLeft-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9422EFC8FDE664E99E3840265E35AC7D /* Pods-RightLeft-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RightLeft-dummy.m"; sourceTree = "<group>"; };
+		AD3D18DA29A287076F088182C49E5A16 /* TapjoyResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TapjoyResources.bundle; path = TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C7F1C6D89F3908675BC7D58A15726645 /* Pods-RightLeft-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RightLeft-acknowledgements.plist"; sourceTree = "<group>"; };
-		EC6DA10A1F02D15B95300C87A888C974 /* Pods-RightLeft-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RightLeft-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EE6CC6AE78C8006E20C69E7B2616A019 /* libPods-RightLeft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RightLeft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7F4319FCB17EDB8B552E20FF00BA969 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tapjoy.framework; path = TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework; sourceTree = "<group>"; };
+		D7E451E1978BC91A7F274B585E26BCDB /* Pods-RightLeft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RightLeft.debug.xcconfig"; sourceTree = "<group>"; };
+		E55F3D7535774092A1C0ED3FE873CA4B /* libPods-RightLeft.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RightLeft.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,28 +32,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5B2E2B44102DD1EDF9830FD851391B7 /* Foundation.framework in Frameworks */,
+				E5AF237E46367BD7D7C0862F969AA041 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16FCA0A1D98DA3679EFE72E235C67E24 /* Resources */ = {
+		3FC8AEAE94FA99FAC5C2B5890BF0D612 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				75CC12463D994997CC4B4D9228766555 /* TapjoyResources.bundle */,
-				0962E13320D625CC2E9DE9B47427FF6F /* TapjoyResources.bundle */,
+				AD3D18DA29A287076F088182C49E5A16 /* TapjoyResources.bundle */,
+				59EFA8E340336A3F0426B188A7910768 /* TapjoyResources.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+		4AE00296173D8A9E08CDBF89B5867AF0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E5BCCEFD069E4DC5F1EBDB38063CD11 /* Foundation.framework */,
+				E55F3D7535774092A1C0ED3FE873CA4B /* libPods-RightLeft.a */,
 			);
-			name = iOS;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DEE390A1BFDE04C5ABFE8A58B7514C8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B54E61BD3BD23D7B3DE3F9C0086E19E /* Pods-RightLeft */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		57A3808C7834AA8BA76B7B7229B0E2C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BD6D56A07078F38404C0066A0008079 /* Tapjoy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B54E61BD3BD23D7B3DE3F9C0086E19E /* Pods-RightLeft */ = {
+			isa = PBXGroup;
+			children = (
+				8E47A002FEF9A1E488FB8B0C1B52E836 /* Pods-RightLeft-acknowledgements.markdown */,
+				5B4FBF0E358AF8F16D12CAE81BE3D71E /* Pods-RightLeft-acknowledgements.plist */,
+				9422EFC8FDE664E99E3840265E35AC7D /* Pods-RightLeft-dummy.m */,
+				776A4273808B90728E232CB098B58EDA /* Pods-RightLeft-frameworks.sh */,
+				64C321A40CCB01B2AA8059DF73E4AB27 /* Pods-RightLeft-resources.sh */,
+				D7E451E1978BC91A7F274B585E26BCDB /* Pods-RightLeft.debug.xcconfig */,
+				7F339162BBEE50F1212A94FE6D7E1CA4 /* Pods-RightLeft.release.xcconfig */,
+			);
+			name = "Pods-RightLeft";
+			path = "Target Support Files/Pods-RightLeft";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -61,16 +93,16 @@
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				A8B26B5BF8DFFFBAF20B5089013DA517 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				FAFBFEFCBE5650AB9E7D014BE2DDABD3 /* Targets Support Files */,
+				4AE00296173D8A9E08CDBF89B5867AF0 /* Products */,
+				4DEE390A1BFDE04C5ABFE8A58B7514C8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
 		90DBA145B509BC45AA87DDA99C61C479 /* TapjoySDK */ = {
 			isa = PBXGroup;
 			children = (
-				F6A35649511390FFEA7009047587C07C /* Frameworks */,
-				16FCA0A1D98DA3679EFE72E235C67E24 /* Resources */,
+				57A3808C7834AA8BA76B7B7229B0E2C2 /* Frameworks */,
+				3FC8AEAE94FA99FAC5C2B5890BF0D612 /* Resources */,
 			);
 			path = TapjoySDK;
 			sourceTree = "<group>";
@@ -86,47 +118,17 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C8AC62205521BBBB91D9AD18664EC3EE /* Pods-RightLeft */ = {
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EC6DA10A1F02D15B95300C87A888C974 /* Pods-RightLeft-acknowledgements.markdown */,
-				C7F1C6D89F3908675BC7D58A15726645 /* Pods-RightLeft-acknowledgements.plist */,
-				621740A6FD5D08C429D8E918E9867450 /* Pods-RightLeft-dummy.m */,
-				194D90C9555FBFFF65902858A6211016 /* Pods-RightLeft-resources.sh */,
-				3AD954795768025FCDF94E63032A91BF /* Pods-RightLeft.debug.xcconfig */,
-				90C3B91D66D2EA32BC2B16FED13FE8B3 /* Pods-RightLeft.release.xcconfig */,
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
-			name = "Pods-RightLeft";
-			path = "Target Support Files/Pods-RightLeft";
-			sourceTree = "<group>";
-		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EE6CC6AE78C8006E20C69E7B2616A019 /* libPods-RightLeft.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F6A35649511390FFEA7009047587C07C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F7F4319FCB17EDB8B552E20FF00BA969 /* Tapjoy.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FAFBFEFCBE5650AB9E7D014BE2DDABD3 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C8AC62205521BBBB91D9AD18664EC3EE /* Pods-RightLeft */,
-			);
-			name = "Targets Support Files";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +147,7 @@
 			);
 			name = "Pods-RightLeft";
 			productName = "Pods-RightLeft";
-			productReference = EE6CC6AE78C8006E20C69E7B2616A019 /* libPods-RightLeft.a */;
+			productReference = E55F3D7535774092A1C0ED3FE873CA4B /* libPods-RightLeft.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -165,7 +167,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = 4AE00296173D8A9E08CDBF89B5867AF0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -220,13 +222,14 @@
 			};
 			name = Release;
 		};
-		B17142B8264FDEC17CFEE2AF6330EB1E /* Debug */ = {
+		86436C1F8438300C04010316C88CD68F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AD954795768025FCDF94E63032A91BF /* Pods-RightLeft.debug.xcconfig */;
+			baseConfigurationReference = 7F339162BBEE50F1212A94FE6D7E1CA4 /* Pods-RightLeft.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -234,7 +237,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -275,13 +278,14 @@
 			};
 			name = Debug;
 		};
-		CC98B83062757078F64266D81ADC94C7 /* Release */ = {
+		FBCEF49C7C441A081B5D078E88EE9CCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90C3B91D66D2EA32BC2B16FED13FE8B3 /* Pods-RightLeft.release.xcconfig */;
+			baseConfigurationReference = D7E451E1978BC91A7F274B585E26BCDB /* Pods-RightLeft.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -289,7 +293,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -306,8 +310,8 @@
 		ABD66892FBE8FE3532D0C5B9BB03E783 /* Build configuration list for PBXNativeTarget "Pods-RightLeft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B17142B8264FDEC17CFEE2AF6330EB1E /* Debug */,
-				CC98B83062757078F64266D81ADC94C7 /* Release */,
+				FBCEF49C7C441A081B5D078E88EE9CCC /* Debug */,
+				86436C1F8438300C04010316C88CD68F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

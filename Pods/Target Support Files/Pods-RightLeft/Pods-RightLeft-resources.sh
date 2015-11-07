@@ -58,17 +58,17 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "TapjoySDK/TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle"
-  install_resource "TapjoySDK/TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle"
+  install_resource "TapjoySDK/TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle"
+  install_resource "TapjoySDK/TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "TapjoySDK/TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle"
-  install_resource "TapjoySDK/TapjoySDK_iOS_v10.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle"
+  install_resource "TapjoySDK/TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle"
+  install_resource "TapjoySDK/TapjoySDK_iOS_v11.2.2/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
-if [[ "${ACTION}" == "install" ]]; then
+if [[ "${ACTION}" == "install" ]] && [[ "${SKIP_INSTALL}" == "NO" ]]; then
   mkdir -p "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
   rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 fi

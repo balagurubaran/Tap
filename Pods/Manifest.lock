@@ -1,10 +1,10 @@
 PODS:
-  - TapjoySDK (10.2.2)
+  - TapjoySDK (11.2.2)
 
 DEPENDENCIES:
-  - TapjoySDK (= 10.2.2)
+  - TapjoySDK
 
 SPEC CHECKSUMS:
-  TapjoySDK: 112a13c9cc4ba593e1f29e16fbdf5a6ed21895f4
+  TapjoySDK: 0bc977cbb3c7eab9519a975d71b0c9f5b9b572a8
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
