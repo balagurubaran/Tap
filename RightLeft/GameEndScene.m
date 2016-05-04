@@ -9,9 +9,11 @@
 #import "GameEndScene.h"
 #import "GameCenterClass.h"
 #import "RIghtLeftConstant.h"
+
 @implementation GameEndScene
 
 NSUserDefaults *defaults_GES;
+SKLabelNode *info;
 
 -(void)didMoveToView:(SKView *)view {
     SKLabelNode *playNode = (SKLabelNode*)[self childNodeWithName:@"playNode"];
@@ -31,7 +33,7 @@ NSUserDefaults *defaults_GES;
     SKSpriteNode *leaderBoardNode = (SKSpriteNode*)[self childNodeWithName:@"leaderBoardNode"];
     leaderBoardNode.userData = [NSMutableDictionary dictionaryWithObject:@"leaderboard" forKey:@"userData"];
     
-    
+    info        = (SKLabelNode*)[self childNodeWithName:@"Info"];
     defaults_GES = [NSUserDefaults standardUserDefaults];
     int currentPoint = [[defaults_GES objectForKey:CURRENTPOINT] intValue];
     currentScoreNode.text = [NSString stringWithFormat:@"%d",currentPoint];
@@ -40,19 +42,21 @@ NSUserDefaults *defaults_GES;
     
     GameCenterClass* GCenter = [GameCenterClass gameCenterSharedInstance];
 
-    if(currentPoint >= bestScore){
+    if(currentPoint > bestScore){
         bestScore = currentPoint;
         [defaults_GES setObject:[NSString stringWithFormat:@"%d",bestScore] forKey:BESTSCORE];
-        [GCenter postScore:bestScore];
-    }else{
-        int gameCenterScore = [[defaults_GES objectForKey:GAMECENTERSCORE] intValue];
-        if(gameCenterScore < bestScore){
-            [GCenter postScore:bestScore];
-        }
     }
+    [GCenter postScore:currentPoint];
     
     SKLabelNode *bestScoreNode = (SKLabelNode*)[self childNodeWithName:@"bestScoreNode"];
     bestScoreNode.text = [NSString stringWithFormat:@"%d",bestScore];
+    
+    info.text = @"Don't give up try hard to beat your own best";
+    if(bestScore <= currentPoint){
+        info.text = @"Congratulations! New high score";
+    } else if(bestScore - 10 < currentPoint){
+        info.text = @"OOPS! Close to your best score Don't give up ";
+    }
     
   //  [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAds" object:nil];
     

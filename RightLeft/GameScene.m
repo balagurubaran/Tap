@@ -22,6 +22,8 @@ NSMutableArray *colorArray;
 NSTimer  *colorChangetimer;
 
 NSMutableArray *colorRandomNumberArray;
+
+NSMutableArray *colorRandomArray;
 NSMutableArray *randomTextArray;
 int currentColor;
 BOOL isTapped;
@@ -38,6 +40,8 @@ AVAudioPlayer *clickPlayer;
 AVAudioPlayer *wrongClickPlayer;
 
 NSUserDefaults *defaults;
+
+NSMutableArray *nodeArray;
 
 @implementation GameScene
 
@@ -58,9 +62,11 @@ NSUserDefaults *defaults;
     
     scoreLblNode = (SKLabelNode*)[self childNodeWithName:@"scoreLblNode"];
     //timerLblNode = (SKLabelNode*)[self childNodeWithName:@"timerLblNode"];
+    nodeArray = [[NSMutableArray alloc] init];
     
     SKSpriteNode *redTap = (SKSpriteNode*)[self childNodeWithName:@"redTabNode"];
     redTap.userData = [NSMutableDictionary dictionaryWithObject:@"redTabNode" forKey:@"userData"];
+    
     
     SKSpriteNode *greenTap = (SKSpriteNode*)[self childNodeWithName:@"greenTabNode"];
     greenTap.userData = [NSMutableDictionary dictionaryWithObject:@"greenTabNode" forKey:@"userData"];
@@ -74,12 +80,17 @@ NSUserDefaults *defaults;
     SKLabelNode *backNode = (SKLabelNode*)[self childNodeWithName:@"backNode"];
     backNode.userData = [NSMutableDictionary dictionaryWithObject:@"backNode" forKey:@"userData"];
     
+    [nodeArray addObject:redTap];
+    [nodeArray addObject:greenTap];
+    [nodeArray addObject:blueTabNode];
+    [nodeArray addObject:orangeTabNode];
+    
     isTapped = YES;
     isGameStarted = NO;
     isGameFailed = NO;
     
     
-     defaults = [NSUserDefaults standardUserDefaults];
+    defaults = [NSUserDefaults standardUserDefaults];
     
     currentPoint = 0;
     maxTimerValue = 60;
@@ -109,7 +120,16 @@ NSUserDefaults *defaults;
     
     isEffect = [[defaults objectForKey:ISEFFECT] boolValue];
     
+    colorRandomArray = [GenerateUniqueRandomNumber generateRamdomNumber:0 toValue:(int)[nodeArray count] - 1 numberOfValue:(int)[nodeArray count]];
     
+    int i = 0;
+    for(SKLabelNode *eachNodeIndex in nodeArray){
+        int index = [[colorRandomArray objectAtIndex:i] intValue];
+        SKLabelNode *node = [nodeArray objectAtIndex:index];
+        SKAction *move = [SKAction moveTo:CGPointMake(eachNodeIndex.frame.origin.x + eachNodeIndex.frame.size.width/2, eachNodeIndex.frame.origin.y + eachNodeIndex.frame.size.height/2) duration:1];
+        [node runAction:move];
+        i++;
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

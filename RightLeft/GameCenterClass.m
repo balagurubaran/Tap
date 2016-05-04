@@ -49,6 +49,7 @@ GameCenterClass *gameCenterSharedInstance;
             
             GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] init];
             leaderboardRequest.identifier = @"tapcolor_topscore";
+            leaderboardRequest.timeScope = GKLeaderboardTimeScopeToday;
             if (leaderboardRequest != nil) {
                 [leaderboardRequest loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error){
                     if (error == nil) {
